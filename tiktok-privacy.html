@@ -3,150 +3,401 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Privacy Policy | TradeVest Global Inc</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
             --primary-color: #FE2C55;
             /* TikTok Brand Color */
-            --text-color: #333;
-            --bg-color: #f9f9f9;
+            --soft-red-bg-start: #fff5f5;
+            --soft-red-bg-end: #ffe8e8;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --card-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
+            --border-light: #f0e2e2;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.55;
+            color: var(--text-primary);
+            /* 淡红色底色 (light red / soft blush) */
+            background: linear-gradient(135deg, #ffecec 0%, #ffe0e0 100%);
             margin: 0;
-            padding: 0;
+            padding: 2rem 1rem;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
+        /* modern card container */
+        .privacy-card {
+            max-width: 980px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        h1 {
-            color: #000;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 10px;
-            font-size: 24px;
+        /* header section */
+        .policy-header {
+            padding: 2rem 2.5rem 1.2rem 2.5rem;
+            border-bottom: 1px solid var(--border-light);
+            background: #ffffff;
         }
 
-        h2 {
-            color: #000;
-            margin-top: 25px;
-            font-size: 18px;
-            border-left: 4px solid var(--primary-color);
-            padding-left: 10px;
+        .brand-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fef2f4;
+            padding: 0.25rem 0.9rem;
+            border-radius: 60px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: var(--primary-color);
+            border: 0.5px solid rgba(254, 44, 85, 0.2);
+            margin-bottom: 1.2rem;
         }
 
-        p,
-        li {
-            font-size: 15px;
-            color: #555;
+        .policy-header h1 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            background: linear-gradient(115deg, #1a1e2c 0%, #2d2f3e 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-badge {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 12px;
+            margin: 0.5rem 0 0.3rem;
+        }
+
+        .game-badge h2 {
+            font-size: 1rem;
+            font-weight: 500;
+            background: #f0f2f5;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            color: #2c3e50;
+            border-left: none;
         }
 
         .last-updated {
-            font-style: italic;
-            color: #888;
-            margin-bottom: 30px;
+            font-size: 0.85rem;
+            color: #6c6f7b;
+            margin-top: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .contact-info {
-            background: #f0f0f0;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 30px;
+        .last-updated::before {
+            content: "📅";
+            font-size: 0.8rem;
         }
 
-        footer {
+        .intro-text {
+            margin-top: 1rem;
+            font-size: 0.96rem;
+            color: #4a5568;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1rem;
+            background: #fefafb;
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* content area */
+        .policy-content {
+            padding: 2rem 2.5rem;
+        }
+
+        /* each section */
+        .section {
+            margin-bottom: 2.2rem;
+            scroll-margin-top: 20px;
+        }
+
+        .section h3 {
+            font-size: 1.35rem;
+            font-weight: 650;
+            color: #111827;
+            margin-bottom: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+        }
+
+        .section p {
+            color: #2d3a4b;
+            margin-bottom: 0.9rem;
+            font-size: 0.97rem;
+            line-height: 1.55;
+        }
+
+        .section ul {
+            margin: 0.75rem 0 0.5rem 1.8rem;
+        }
+
+        .section li {
+            margin: 0.5rem 0;
+            color: #2d3a4b;
+            font-size: 0.96rem;
+        }
+
+        .section li strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* modern contact card */
+        .contact-modern {
+            background: #fffafb;
+            border-radius: 24px;
+            border: 1px solid #ffe2e7;
+            padding: 1.6rem 2rem;
+            margin-top: 2rem;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(254, 44, 85, 0.04);
+        }
+
+        .contact-modern h3 {
+            border-left: none;
+            padding-left: 0;
+            margin-bottom: 0.8rem;
+            font-size: 1.28rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 12px;
+            font-size: 0.95rem;
+            border-bottom: 1px dashed #ffe2e7;
+            padding-bottom: 8px;
+        }
+
+        .contact-label {
+            font-weight: 700;
+            min-width: 90px;
+            color: #1f2a3e;
+        }
+
+        .contact-value {
+            color: #2d3e5a;
+            word-break: break-word;
+        }
+
+        .contact-value a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(254, 44, 85, 0.3);
+            transition: border 0.2s;
+        }
+
+        .contact-value a:hover {
+            border-bottom-color: var(--primary-color);
+        }
+
+        hr {
+            margin: 1rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #ffe2e7, transparent);
+        }
+
+        /* footer */
+        .policy-footer {
+            background: #fef7f7;
+            border-top: 1px solid #ffe6ea;
+            padding: 1.2rem 2rem;
             text-align: center;
-            margin-top: 40px;
-            font-size: 12px;
-            color: #aaa;
-            padding-bottom: 20px;
+            font-size: 0.75rem;
+            color: #8b7a7c;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                margin: 10px;
-                padding: 20px;
+        /* responsive */
+        @media (max-width: 680px) {
+            body {
+                padding: 1rem 0.75rem;
             }
+
+            .policy-header {
+                padding: 1.5rem 1.5rem 1rem 1.5rem;
+            }
+
+            .policy-header h1 {
+                font-size: 1.7rem;
+            }
+
+            .policy-content {
+                padding: 1.5rem;
+            }
+
+            .section h3 {
+                font-size: 1.2rem;
+            }
+
+            .contact-modern {
+                padding: 1.2rem;
+            }
+
+            .contact-label {
+                min-width: 75px;
+            }
+        }
+
+        /* subtle animation */
+        .privacy-card:hover {
+            box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.12);
+        }
+
+        .small-note {
+            font-size: 0.78rem;
+            color: #8c6e73;
+            margin-top: 10px;
+        }
+
+        .pill-icon {
+            background: #fdeff2;
+            border-radius: 40px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.7rem;
+            font-weight: 500;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div style="text-align: center;">
+    <div class="privacy-card">
+        <div class="policy-header">
             <h1>TradeVest Global Inc</h1>
+            <div class="game-badge">
+                <h2>📄 Privacy Policy</h2>
+                <span class="pill-icon">games-service</span>
+            </div>
+            <div class="last-updated">Last Updated: March 23, 2026</div>
+            <div class="intro-text">
+                We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains
+                how we collect, use, and disclose information when you play our game on the TikTok platform.
+            </div>
         </div>
-        <h2>Privacy Policy</h2>
-        <p class="last-updated">Last Updated: March 23, 2026</p>
 
-        <p>We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how
-            we collect, use, and disclose information when you play our game on the TikTok platform.</p>
+        <div class="policy-content">
+            <!-- 1. Information We Collect -->
+            <div class="section" id="collect">
+                <h3>📌 1. Information We Collect</h3>
+                <p>As a TikTok Mini Game, we primarily access information through TikTok’s APIs:</p>
+                <ul>
+                    <li><strong>TikTok OpenID/UnionID:</strong> A unique identifier provided by TikTok to recognize
+                        you.</li>
+                    <li><strong>Profile Information:</strong> Your nickname and avatar (only if you grant explicit
+                        permission).</li>
+                    <li><strong>Gameplay Data:</strong> Level progress, high scores, and in-game currency balances.
+                    </li>
+                    <li><strong>Device Information:</strong> Device model, OS version, and language settings to ensure
+                        technical compatibility.</li>
+                </ul>
+            </div>
 
-        <h2>1. Information We Collect</h2>
-        <p>As a TikTok Mini Game, we primarily access information through TikTok’s APIs:</p>
-        <ul>
-            <li><strong>TikTok OpenID/UnionID:</strong> A unique identifier provided by TikTok to recognize you.</li>
-            <li><strong>Profile Information:</strong> Your nickname and avatar (only if you grant explicit permission).
-            </li>
-            <li><strong>Gameplay Data:</strong> Level progress, high scores, and in-game currency balances.</li>
-            <li><strong>Device Information:</strong> Device model, OS version, and language settings to ensure technical
-                compatibility.</li>
-        </ul>
+            <!-- 2. How We Use Your Information -->
+            <div class="section" id="use">
+                <h3>⚙️ 2. How We Use Your Information</h3>
+                <p>We use the collected data strictly for:</p>
+                <ul>
+                    <li>Providing and maintaining the Game’s core functionality.</li>
+                    <li>Saving your game progress and synchronization.</li>
+                    <li>Displaying leaderboards within the TikTok ecosystem.</li>
+                    <li>Improving game performance and fixing technical bugs.</li>
+                </ul>
+            </div>
 
-        <h2>2. How We Use Your Information</h2>
-        <p>We use the collected data strictly for:</p>
-        <ul>
-            <li>Providing and maintaining the Game’s core functionality.</li>
-            <li>Saving your game progress and synchronization.</li>
-            <li>Displaying leaderboards within the TikTok ecosystem.</li>
-            <li>Improving game performance and fixing technical bugs.</li>
-        </ul>
+            <!-- 3. Data Sharing and Third Parties -->
+            <div class="section" id="sharing">
+                <h3>🤝 3. Data Sharing and Third Parties</h3>
+                <p>We do not sell your personal data. However, we share data with:</p>
+                <ul>
+                    <li><strong>TikTok (ByteDance Ltd.):</strong> To facilitate game integration and analytics.</li>
+                    <li><strong>Service Providers:</strong> Cloud storage or analytics services that comply with
+                        international data protection standards (e.g., GDPR, CCPA).</li>
+                </ul>
+            </div>
 
-        <h2>3. Data Sharing and Third Parties</h2>
-        <p>We do not sell your personal data. However, we share data with:</p>
-        <ul>
-            <li><strong>TikTok (ByteDance Ltd.):</strong> To facilitate game integration and analytics.</li>
-            <li><strong>Service Providers:</strong> Cloud storage or analytics services that comply with international
-                data protection standards (e.g., GDPR, CCPA).</li>
-        </ul>
+            <!-- 4. Regional Compliance (US Users) -->
+            <div class="section" id="compliance">
+                <h3>🇺🇸 4. Regional Compliance (US Users)</h3>
+                <p>In compliance with TikTok’s <strong>"Project Texas"</strong> requirements, any US user data
+                    processed by this Game is handled in accordance with TikTok’s designated secure infrastructure and
+                    data residency policies.</p>
+            </div>
 
-        <h2>4. Regional Compliance (US Users)</h2>
-        <p>In compliance with TikTok’s <strong>"Project Texas"</strong> requirements, any US user data processed by this
-            Game is handled in accordance with TikTok’s designated secure infrastructure and data residency policies.
-        </p>
+            <!-- 5. Your Rights -->
+            <div class="section" id="rights">
+                <h3>📋 5. Your Rights</h3>
+                <p>Depending on your location, you have the right to request access to your data, request deletion
+                    ("Right to be Forgotten"), or opt-out of data collection. To exercise these rights, please contact
+                    us via the email below.</p>
+            </div>
 
-        <h2>5. Your Rights</h2>
-        <p>Depending on your location, you have the right to request access to your data, request deletion ("Right to be
-            Forgotten"), or opt-out of data collection. To exercise these rights, please contact us via the email below.
-        </p>
+            <!-- 6. Children’s Privacy -->
+            <div class="section" id="children">
+                <h3>🧸 6. Children’s Privacy</h3>
+                <p>The Game is not intended for children under the age of 13. We do not knowingly collect data from
+                    children. If we discover such data, we will delete it immediately.</p>
+            </div>
 
-        <h2>6. Children’s Privacy</h2>
-        <p>The Game is not intended for children under the age of 13. We do not knowingly collect data from children. If
-            we discover such data, we will delete it immediately.</p>
+            <!-- Contact Us (modern card) -->
+            <div class="contact-modern" id="contact">
+                <h3>📬 7. Contact Us</h3>
+                <p>If you have questions about this policy, or if you want to exercise your privacy rights, please reach
+                    out:</p>
+                <div class="contact-details">
+                    <div class="contact-row">
+                        <span class="contact-label">Developer:</span>
+                        <span class="contact-value"><strong>TradeVest Global Inc</strong></span>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">Email:</span>
+                        <span class="contact-value"><a href="mailto:baiqian255@gmail.com">baiqian255@gmail.com</a></span>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-label">Response time:</span>
+                        <span class="contact-value">Typically 5–7 business days</span>
+                    </div>
+                </div>
+                <hr>
+                <p class="small-note">🔐 For data deletion requests, please include “Privacy Request” in the subject line.</p>
+            </div>
+        </div>
 
-        <div class="contact-info">
-            <h2>7. Contact Us</h2>
-            <p>If you have questions about this policy, please contact:</p>
-            <p><strong>Developer:</strong> [TradeVest Global Inc]</p>
-            <p><strong>Email:</strong> <a href="mailto:baiqian255@gmail.com">[baiqian255@gmail.com]</a></p>
+        <div class="policy-footer">
+            &copy; 2026 TradeVest Global Inc — All rights reserved. <span style="opacity:0.6;">| TikTok Mini Game Privacy Policy</span>
         </div>
     </div>
-
-    <footer>
-        &copy; 2026 [TradeVest Global Inc]. All rights reserved.
-    </footer>
 
 </body>
 
